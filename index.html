@@ -1,104 +1,251 @@
 <html>
-
-<head>
-    <title>
-        Sustainability Project
-    </title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="assets/style/style.css">
-</head>
-
-<body>
-    <div class="header">
-        <div style="display: flex; align-items: center;">
-            <img alt="Recycling logo" height="40"
-                src="https://storage.googleapis.com/a1aa/image/aXU9sskI4EqoINaWl06RVXVR833l0FKWKpbZRGe8gjZNIy3JA.jpg"
-                width="40" />
-            <nav>
-                <a href="#">
-                    HOME 
-                </a>
-                <a href="#">
-                    ABOUT
-                </a>
-                <a href="#">
-                    PROGRAMS
-                </a>
-                <a href="#">
-                    CONTACT
-                </a>
-            </nav>
-        </div>
-        <div class="search">
-            <input placeholder="Search..." type="text" />
-            <i class="fa fa-search"></i>
-        </div>
+ <head>
+  <title>
+   Sustainability Project
+  </title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <style>
+   body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #e0f7e9;
+        }
+        .header {
+            background-color: #2a5d67; /* Warna hijau sesuai permintaan */
+            padding: 20px;
+            color: white;
+            position: relative;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .header img {
+            height: 40px;
+            vertical-align: middle;
+            margin-right: 20px;
+        }
+        .header .menu {
+            display: flex;
+            flex-grow: 1;
+            flex-wrap: wrap;
+        }
+        .header .menu a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+        .header .menu a:hover {
+            color: #ffeb3b; /* Warna kuning cerah */
+        }
+        .main-content {
+            background-image: url('https://placehold.co/1200x900');
+            background-size: cover;
+            background-position: center;
+            padding: 50px 20px;
+            text-align: center;
+            color: #333;
+            width: 100vw; /* Membuat lebar penuh */
+            height: 100vh; /* Membuat tinggi penuh */
+            box-sizing: border-box;
+        }
+        .main-content h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+            color: #2a5d67;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        .main-content p {
+            font-size: 24px;
+            margin-bottom: 40px;
+            color: #2a5d67;
+        }
+        .cards {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 100px; /* Menambah margin atas untuk menurunkan posisi card */
+            flex-wrap: wrap;
+        }
+        .card {
+            background-color: white;
+            padding: 30px; /* Menambah padding */
+            width: 250px; /* Menambah lebar */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            border-radius: 10px;
+            margin: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .card img {
+            width: 60px; /* Menambah ukuran gambar */
+            margin-bottom: 10px;
+        }
+        .card h3 {
+            font-size: 28px; /* Menambah ukuran font */
+            margin-bottom: 10px;
+            color: #2a5d67;
+        }
+        .card p {
+            font-size: 16px; /* Menambah ukuran font */
+            color: #666;
+        }
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .header .menu {
+                justify-content: center;
+                width: 100%;
+                margin-top: 10px;
+            }
+            .header .menu a {
+                margin: 5px 10px;
+            }
+            .main-content h1 {
+                font-size: 36px;
+            }
+            .main-content p {
+                font-size: 18px;
+            }
+        }
+        @media (max-width: 480px) {
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .header .menu {
+                display: none;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+            }
+            .header .menu a {
+                margin: 10px 0;
+                font-size: 20px;
+            }
+            .header .menu a:hover {
+                background-color: #3b7a78;
+                padding: 10px;
+                border-radius: 5px;
+            }
+            .header .menu-toggle {
+                display: block;
+                cursor: pointer;
+                font-size: 24px;
+                margin-left: auto;
+            }
+            .header .menu-toggle.active + .menu {
+                display: flex;
+            }
+            .main-content h1 {
+                font-size: 28px;
+            }
+            .main-content p {
+                font-size: 16px;
+            }
+            .cards {
+                display: flex;
+                overflow-x: scroll;
+                scroll-snap-type: x mandatory;
+                -webkit-overflow-scrolling: touch;
+                gap: 10px;
+                padding: 20px 0;
+            }
+            .card {
+                flex: 0 0 80%;
+                scroll-snap-align: center;
+                margin: 0 10px;
+            }
+        }
+  </style>
+ </head>
+ <body>
+  <div class="header">
+   <img alt="Logo" height="40" src="https://storage.googleapis.com/a1aa/image/2wVi5GfaIBVXGSwDLXsYKAFJ16r8I6PM5MYldeDECutnYOzTA.jpg" width="40"/>
+   <div class="menu-toggle">
+    <i class="fas fa-bars"></i>
+   </div>
+   <div class="menu">
+    <a href="#">
+     HOME
+    </a>
+    <a href="#">
+     ABOUT
+    </a>
+    <a href="#">
+     PROGRAM
+    </a>
+    <a href="#">
+     GALLERY
+    </a>
+    <a href="#">
+     LEADERBOARD
+    </a>
+    <a href="#">
+     CONTACT US
+    </a>
+   </div>
+  </div>
+  <div class="main-content">
+   <h1>
+    SUSTAINABILITY PROJECT
+   </h1>
+   <p>
+    Creating a greener world
+   </p>
+   <div class="cards">
+    <div class="card">
+     <img alt="Recycle Icon" height="60" src="https://storage.googleapis.com/a1aa/image/IlvZlANn9g5feETkJbMLMIsU4e4KIDgIByehQu1G5oCXi5MPB.jpg" width="60"/>
+     <h3>
+      HOME
+     </h3>
+     <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.
+     </p>
     </div>
-    <div class="main">
-        <h1>
-            SUSTAINABILITY PROJECT
-        </h1>
-        <p>
-            Environmental Protection
-        </p>
+    <div class="card">
+     <img alt="Recycle Icon" height="60" src="https://storage.googleapis.com/a1aa/image/IlvZlANn9g5feETkJbMLMIsU4e4KIDgIByehQu1G5oCXi5MPB.jpg" width="60"/>
+     <h3>
+      ABOUT
+     </h3>
+     <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+     </p>
     </div>
-    <div class="content">
-        <div class="card">
-            <img alt="Recycling icon" height="50"
-                src="https://storage.googleapis.com/a1aa/image/YzpNTeuWeArKZkdks3QpwsLtGTy59T5iSmTvGq8CrQpYQkvTA.jpg"
-                width="50" />
-            <h3>
-                HOME
-            </h3>
-            <p>
-                Dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna
-                aliqua.
-            </p>
-        </div>
-        <div class="card">
-            <img alt="Recycling icon" height="50"
-                src="https://storage.googleapis.com/a1aa/image/YzpNTeuWeArKZkdks3QpwsLtGTy59T5iSmTvGq8CrQpYQkvTA.jpg"
-                width="50" />
-            <h3>
-                ABOUT
-            </h3>
-            <p>
-                Consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>
-        </div>
-        <div class="card">
-            <img alt="Recycling icon" height="50"
-                src="https://storage.googleapis.com/a1aa/image/YzpNTeuWeArKZkdks3QpwsLtGTy59T5iSmTvGq8CrQpYQkvTA.jpg"
-                width="50" />
-            <h3>
-                PROGRAMS
-            </h3>
-            <p>
-                Tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud exercitation.
-            </p>
-        </div>
-        <div class="card">
-            <img alt="Recycling icon" height="50"
-                src="https://storage.googleapis.com/a1aa/image/YzpNTeuWeArKZkdks3QpwsLtGTy59T5iSmTvGq8CrQpYQkvTA.jpg"
-                width="50" />
-            <h3>
-                PROGRAMS
-            </h3>
-            <p>
-                Tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud exercitation.
-            </p>
-        </div>
+    <div class="card">
+     <img alt="Recycle Icon" height="60" src="https://storage.googleapis.com/a1aa/image/IlvZlANn9g5feETkJbMLMIsU4e4KIDgIByehQu1G5oCXi5MPB.jpg" width="60"/>
+     <h3>
+      PROGRAMS
+     </h3>
+     <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+     </p>
     </div>
-    <div class="about">
-        <h2>
-            About Us
-        </h2>
-        <p>
-            Our Sustainability Project is dedicated to promoting environmental protection and sustainability through
-            various programs and initiatives. We believe in the power of community and education to make a positive
-            impact on our planet. Join us in our mission to create a sustainable future for generations to come.
-        </p>
+    <div class="card">
+     <img alt="Recycle Icon" height="60" src="https://storage.googleapis.com/a1aa/image/IlvZlANn9g5feETkJbMLMIsU4e4KIDgIByehQu1G5oCXi5MPB.jpg" width="60"/>
+     <h3>
+      PROGRAMS
+     </h3>
+     <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+     </p>
     </div>
-</body>
-
+   </div>
+  </div>
+  <script>
+   document.querySelector('.menu-toggle').addEventListener('click', function() {
+            this.classList.toggle('active');
+            document.querySelector('.menu').classList.toggle('active');
+        });
+  </script>
+ </body>
 </html>
