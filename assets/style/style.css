@@ -93,109 +93,50 @@ header.hedar{
 
 }
 
-.contact {
-    background: url('https://cdn.pixabay.com/photo/2018/08/21/23/29/forest-3622519_1280.jpg') no-repeat top center;
-    background-size: cover;
-    height: 100vh;
-}
-
-.wrapper {
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    max-width: 550px;
-    background: rgba(0, 0, 0, 0.8);
-    padding: 30px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-}
-
-.wrapper .title h1 {
-    color: #28c76f;
+.about-section {
+    background-color: #f5f5f5;
+    padding: 50px 20px;
     text-align: center;
-    margin-bottom: 25px;
-}
-
-.contact-form {
+  }
+  
+  .section-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #2c3e50;
+  }
+  
+  .about-description {
+    font-size: 1.2rem;
+    color: #34495e;
+    margin-bottom: 40px;
+    line-height: 1.6;
+  }
+  
+  .about-features {
     display: flex;
-}
-
-.input-fields {
-    display: flex;
-    flex-direction: column;
-    margin-right: 4%;
-}
-
-.input-fields,
-.msg-massage {
-    width: 48%;
-}
-
-
-.input-fields {
-    margin: 10px 0;
-    background: transparent;
-    border: 0px;
-    padding: 10px;
-    color: whitesmoke;
-    width: 70%;
-}
-
-.input,
-.msg-massage  textarea {
-    margin: 10px 0;
-    background: transparent;
-    border: 0px;
-    border-bottom: 2px solid #28c76f;
-    padding: 10px;
-    color: whitesmoke;
-    width: 100%;
-}
-
-.msg-massage  textarea {
-    height: 212px;
-}
-
-::-webkit-input-placeholder {
-    color: #28c76f;
-}
-
-::-moz-placeholder {
-    color: #28c76f;
-}
-
-::-ms-input-placeholder {
-    color: #28c76f;
-}
-
-.btn-submit {
-    background-image: linear-gradient(135deg, #81fbb8 10%, #28c76f 100%);
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+  }
+  
+  .feature {
+    max-width: 300px;
     text-align: center;
-    padding: 15px;
-    border-radius: 5px;
-    color: #fff;
-    cursor: pointer;
-    text-decoration: uppercase;
-}
-
-.btn:hover {
-    background: #49c628;
-}
-
-@media screen and (max-width:600px) {
-    .contact-form {
-        flex-direction: column;
-    }
-
-    .msg-massage  textarea {
-        height: 80px;
-        width: 100%;
-    }
-
-    .input-fields,
-    .msg-massage  {
-        width: 100%;
-    }
-}
+  }
+  
+  .feature-icon {
+    width: 80px;
+    margin-bottom: 20px;
+  }
+  
+  .feature h3 {
+    font-size: 1.5rem;
+    color: #2980b9;
+    margin-bottom: 10px;
+  }
+  
+  .feature p {
+    font-size: 1rem;
+    color: #7f8c8d;
+  }
+  
